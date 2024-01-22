@@ -90,7 +90,7 @@ def mainish():
     #     print(myC.show(), end = " ")
 
 def SetAndShowVariantData():
-    nlhe = variant()
+    nlhe = Variant()
     nlhe.SetName(HOLDEM)
     nlhe.SetStructure(NO_LIMIT)
     nlhe.SetActionList([POST, DEAL_DOWN, DEAL_DOWN, BET, BURN, DEAL_COMMUNITY,

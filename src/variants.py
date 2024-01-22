@@ -60,10 +60,10 @@ DISCARD = "Discard"    # For games like Pineapple where players discard but don'
 SHOW_DOWN = "Show"
 PAY_OUT = "Pay"
 
-class variant:
+class Variant:
     def __init__(self, vr = ""):
-        self.var_name = vr
-        self.action_list = []
+        self.var_name: str = vr
+        self.action_list: list[str] = []
         self.pay_type = HI_ONLY
         self.eval = eval_rule_set()
         self.split_eval = eval_rule_set() # It might be best to have two eval_rule_sets to use
@@ -84,13 +84,13 @@ class variant:
         rep_string += f"::PAY={self.pay_type}\n"
         rep_string += f"::BET={self.bet_structure}\n"
         return rep_string
-    def SetName(self, vn):
+    def SetName(self, vn: str):
         self.var_name = vn
     def GetName(self):
         return self.var_name
-    def SetActionList(self, act_list):
+    def SetActionList(self, act_list: list[str]):
         self.action_list = act_list
-    def AppendAction(self, act):
+    def AppendAction(self, act: str):
         self.action_list.append(act)
     def GetAction(self, i):
         return self.action_list[i]
